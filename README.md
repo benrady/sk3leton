@@ -1,10 +1,11 @@
 
 ## Development Server
 
-bundle install
-bundle exec guard
+`bundle install`
+`bundle exec guard`
 
-http://localhost:9292 for the app
-http://localhost:9292/tests for the tests
+Go to http://localhost:9292 for the app
 
-Will reload automatically as you change files
+Go to http://localhost:9292/tests for the tests
+
+It will reload automatically as you change files
