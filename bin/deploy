@@ -6,11 +6,16 @@ root_dir=`dirname $bin_dir`
 defaults="--acl-public --exclude=.DS_Store"
 cd $root_dir
 
+if [[ ! -x `which s3cmd` ]]; then
+  echo "Cannot find s3cmd"
+  exit 1
+fi
+
 function add_bucket() {
   local env_name=$1
-  echo "Configuring s3 environment"
+  echo "Configuring deployment..."
   echo
-  echo "What is the name of the s3 bucket?"
+  echo "What is the name of the Amazon S3 bucket you're deploying to?"
   read bucket
   echo
   echo "$bucket" >> $root_dir/.deploy
